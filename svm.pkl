@@ -1,0 +1,15 @@
+# Train an SVM classifier
+svm_classifier = SVC(kernel='linear', C=1.0, random_state=42)
+svm_classifier.fit(X_train, y_train)
+
+# Save the trained SVM model and the scaler
+import joblib
+joblib.dump(svm_classifier, 'svm_model.pkl')
+joblib.dump(scaler, 'scaler.pkl')
+
+# Make predictions
+y_pred = svm_classifier.predict(X_test)
+
+# Evaluate the model
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred))

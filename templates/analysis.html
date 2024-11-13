@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #e6f7f5;
+            text-align: center;
+            padding: 60px;
+        }
+        h1 {
+            color: #1e272e;
+            font-size: 2.5rem;
+        }
+        .result-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            display: inline-block;
+            padding: 30px;
+        }
+        img {
+            border-radius: 12px;
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: white;
+            background-color: #44bd32;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #4cd137;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analysis Result: {{ label }}</h1>
+    <div class="result-container">
+        <img src="{{ url_for('uploaded_file', filename=image_url) }}" alt="Analyzed Plant Image">
+    </div>
+    <br>
+    <a href="/">Analyze Another Plant</a>
+</body>
+</html>
